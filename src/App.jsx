@@ -5,6 +5,8 @@ import leather_shoes from './assets/images/leather_shoes.jpg';
 import minimal_wooden_chair from './assets/images/minimal_wooden_chair.jpg';
 import modern_lamp from './assets/images/modern_lamp.jpg';
 import vintage_watch from './assets/images/vintage_watch.jpg';
+import DelayedImage from './delay.jsx';
+
 
 
 
@@ -97,11 +99,7 @@ function App() {
               key={product.id}
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300"
             >
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-76 object-cover"
-              />
+              <DelayedImage key={product.id + '-' + selectedCategory} src={product.image} alt={product.title} />
               <div className="p-4">
                 <h3 className="text-lg font-semibold">{product.title}</h3>
                 <p className="text-sm text-gray-500">{product.category}</p>
